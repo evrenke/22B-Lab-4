@@ -1,12 +1,13 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <string>
 #include <iostream>
-
+ 
 using namespace std;
 
 template <typename T> T minimum(T t1, T t2);
 template <typename T> T maximum(T t1, T t2);
 template <typename T> T absolute(T t1);
-template  <typename T> T total(int asked);
+template  <typename T> T total(T inputs[]);
 
 int main()
 {
@@ -23,10 +24,19 @@ int main()
 	cout << "Absolute value of -60: " << absolute(-60) << endl;
 	cout << "Absolute value of 13.37:" << absolute(13.37) << endl;
 
-	//cout << "And now the total method " << endl;
-	//cout << "Caution: Only enter the same type of data(only integers, or only strings)" << endl;
-	//cout << total(3) << " is the total of your entries" << endl;
+	cout << "And now the total method " << endl;
+	cout << "Caution: Only enter the same type of data(only integers, or only strings)" << endl;
+	bool isEnteringValues = true;
+	//vector<string> values;
+	string values[100];
+	for(int index = 0; isEnteringValues && index < 100 ; index++)
+	{
+		cin >> values[index];
+	}
+	total(values);
 
+
+	system("pause");
 	return 0;
 }
 
@@ -49,14 +59,12 @@ T absolute(T t1)
 }
 
 template  <typename T>
-T total(int asked)
+T total(T inputs[])
 {
-	for (int entryNum = 0; entryNum < asked; entryNum++)
+	T total;
+	for (int entryNum = 0; entryNum < inputs.length; entryNum++)
 	{
-		cout << "Next entry: ";
-		cin >> entry;
-		cout << endl;
-		total += entry;
+		total += inputs[entryNum];
 	}
 	return total;
 }
