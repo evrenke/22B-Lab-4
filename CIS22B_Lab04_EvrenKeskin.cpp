@@ -27,7 +27,6 @@ int main()
 	cout << "And now the total method " << endl;
 	cout << "Caution: Only enter the same type of data(only integers, or only strings)" << endl;
 	bool isEnteringValues = true;
-	//vector<string> values;
 	string values[100];
 	for(int index = 0; isEnteringValues && index < 100 ; index++)
 	{
